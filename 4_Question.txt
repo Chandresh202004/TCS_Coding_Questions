@@ -56,3 +56,50 @@ int main(){
     cout<<n;
     return 0;
 }
+
+// My code 
+#include<bits/stdc++.h>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int>a;
+    vector<int>b;
+    int temp , reminder;
+    temp = n;
+    while(temp != 0)
+    {
+        reminder = temp % 2;
+        a.push_back(reminder);
+        temp /= 2;
+    }
+    reverse(a.begin(),a.end());
+
+    for(int i = 0 ; i < a.size() ; i++)
+    {
+        if(a[i] == 1)
+        {
+            b.push_back(0);
+        }
+        else
+        {
+            b.push_back(1);
+        }
+    }
+    int sum = 0;
+    reverse(b.begin(),b.end());
+    int countt = 0;
+    for(int i = 0 ; i < b.size() ; i++)
+    {
+        countt++;
+        if(b[i] == 1)
+        {
+            sum += 1 << i;
+        }
+    }
+    cout << sum;
+    return 0;
+}
