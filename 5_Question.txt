@@ -56,3 +56,65 @@ int main(){
     cout<<TotalSunday(day,no_of_days);
     return 0;
 }
+
+//My code using stl
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+
+    int n;
+    cin >> n;
+
+    map<string,int> day = {
+        {"mon",0}, {"tue",1}, {"wed",2},
+        {"thu",3}, {"fri",4}, {"sat",5},
+        {"sun",6}
+    };
+
+    int start = day[s];
+    int countt = 0;
+
+    for(int i = 0; i < n; i++)
+    {
+        if((start + i) % 7 == 6)
+            countt++;
+    }
+
+    cout << countt;
+}
+
+
+//My code without using stl
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin >> s;
+    int n;
+    cin >> n;
+    int countt = 0;
+    int start;
+    
+    if( s == "mon") start = 0;
+    else if ( s == "tue") start = 1;
+    else if(s == "wed") start = 2;
+    else if (s == "thu") start = 3;
+    else if ( s == "fri") start = 4;
+    else if ( s == "sat") start = 5;
+    else if ( s == "sun") start = 6;
+    
+    for(int i = 0 ; i < n ; i++)
+    {
+        if((start + i)%7 == 6)
+        {
+            countt++;
+        }
+    }
+    cout << countt;
+    return 0;
+}
