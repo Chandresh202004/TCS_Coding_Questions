@@ -33,3 +33,22 @@ int main(){
     cin>>N;
    cout<<CalculatePrice(N);
 }
+
+//my code 
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n, product = 1;
+    int rem;
+    cin >> n;
+    while( n != 0)
+    {
+        rem = n % 10;
+        product *= rem;
+        n /= 10;
+    }
+    cout << product;
+    return 0;
+}
