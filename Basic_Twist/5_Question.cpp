@@ -29,3 +29,24 @@ int main(){
 }
     return 0;
 }
+
+// My code
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int term;
+    cin >> term;
+    int res;
+    if(term & 1)
+    {
+       res = ((term - 1) / 2) * 2;
+    }
+    else
+    {
+        res = (term - 2) / 2;
+    }
+    cout << res;
+    return 0;
+}
