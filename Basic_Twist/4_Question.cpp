@@ -36,3 +36,27 @@ int main(){
 
     return 0;
 }
+
+// My code
+
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int term;
+    cin >> term;
+    int value;
+    if(term & 1)
+    {
+        int temp = (term - 1) / 2 ;
+         value = pow(2,temp);
+    }
+    else
+    {
+        int temp = (term - 2) / 2 ;
+         value = pow(3,temp);
+    }
+    cout << value;
+    return 0;
+}
