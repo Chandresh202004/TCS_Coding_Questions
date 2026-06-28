@@ -33,3 +33,26 @@ int main(){
 
     return 0;
 }
+
+//MY code
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int year;
+    cin >> year;
+    if(year % 400 == 0)
+    {
+        cout << "yes";
+    }
+    else if(year % 100 == 0)
+    {
+        cout << "no";
+    }
+    else if(year % 100 != 0 && year % 4 == 0)
+    {
+        cout << "yes";
+    }
+    return 0;
+}
