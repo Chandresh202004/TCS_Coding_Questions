@@ -32,3 +32,30 @@ int main(){
 
     return 0;
 }
+
+// My logic and code 
+// Binary exponentiation rules
+// if power is odd 
+// ---------> result = result * base 
+// base = base * base
+// power = power / 2
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num , power,res = 1;
+    cin >> num >> power;
+    while(power > 0)
+    {
+        if(power % 2 == 1)
+        {
+            res *= num;
+        }
+        
+        num *= num;
+        power /= 2;
+    }
+    cout << res;
+    return 0;
+}
