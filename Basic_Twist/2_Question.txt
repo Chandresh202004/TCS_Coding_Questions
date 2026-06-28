@@ -27,3 +27,35 @@ int main(){
 
     return 0;
 }
+
+//My code
+
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    if( n == 0 || n == 1)
+    {
+        cout << "Neither Prime nor Composite";
+    }
+    else if(n == 2 || n == 3 )
+    {
+        cout << "yes";
+    }
+    else
+    {
+        for(int i = 2 ; i * i <= n ; i++)
+        {
+            if(n % i == 0)
+            {
+                cout << "No";
+                return 0;
+            }
+        }
+        cout << "Yes";
+    }
+    return 0;
+}
