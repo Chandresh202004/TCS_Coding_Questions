@@ -125,3 +125,54 @@ int main(){
 //     cout<<SingleDigitSum(N,R);
 //     return 0;
 // }
+
+//My code 
+
+#include<bits/stdc++.h>
+using namespace std;
+int decipher(int n, int r)
+{
+    int sum1 = 0;
+    int sum2 = 0;
+    int sum3 = 0;
+    int rem1;
+    int rem2;
+    int rem3;
+    int val;
+    while(n > 0)
+    {
+        rem1 = n % 10;
+        sum1 += rem1;
+        n /= 10;
+    }
+    val = sum1 * r;
+    while(val > 0)
+    {
+        rem2 = val % 10;
+        sum2 += rem2;
+        val /= 10;
+    }
+    
+    while( sum2 >= 10)
+    {
+        sum3 = 0;
+        int temp = sum2;
+        while(temp > 0)
+        {
+            rem3 = temp % 10;
+            sum3 += rem3;
+            temp /= 10;
+        }
+        sum2 = sum3;
+    }
+    return sum2;
+}
+int main()
+{
+    int n,r;
+    cin >> n;
+    cin >> r;
+    if( r == 0) return 0;
+    cout << decipher(n,r);
+    return 0;
+}
