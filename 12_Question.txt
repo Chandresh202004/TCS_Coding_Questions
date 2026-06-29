@@ -113,3 +113,48 @@ int main(){
 
     return 0;
 }
+
+//My code 
+#include<bits/stdc++.h>
+using namespace std;
+int calfine(vector<int>&b, int D,int X)
+{
+    int countt = 0;
+    int val = X;
+    if( D & 1)
+    {
+        for(int i = 0 ; i < b.size() ; i++)
+        {
+            if(!(b[i] & 1))
+            {
+                countt++;
+            }
+        }
+        val *= countt;
+    }
+    else
+    {
+        for(int i = 0 ; i < b.size() ; i++)
+        {
+            if(b[i] & 1)
+            {
+                countt++;
+            }
+        }
+        val *= countt;
+    }
+    return val;
+}
+int main()
+{
+    int N,D,X;
+    cin >> N;
+    vector<int>a(N);
+    for(int i = 0 ; i < N ; i++)
+    {
+        cin >> a[i];
+    }
+    cin >> D >> X;
+    cout << calfine(a,D,X);
+    return 0;
+}
